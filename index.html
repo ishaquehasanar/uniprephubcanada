@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UniPrep Hub Canada</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    :root{
+      --navy:#082b73;
+      --gold:#d99b16;
+      --light:#f8f8f8;
+      --text:#222;
+      --border:#d7d7d7;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Montserrat', sans-serif;
+      color:var(--text);
+      background:#ffffff;
+      line-height:1.6;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    .container{
+      width:90%;
+      max-width:1280px;
+      margin:auto;
+    }
+
+    /* ---------------- NAVBAR ---------------- */
+
+    .navbar{
+      padding:22px 0;
+      background:#fff;
+      border-bottom:1px solid rgba(0,0,0,0.06);
+      position:sticky;
+      top:0;
+      z-index:999;
+    }
+
+    .nav-wrapper{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .logo{
+      font-size:2rem;
+      font-weight:800;
+      color:var(--navy);
+    }
+
+    .logo span{
+      color:var(--gold);
+    }
+
+    .nav-links{
+      display:flex;
+      gap:35px;
+      align-items:center;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+      color:var(--navy);
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .nav-links a:hover{
+      color:var(--gold);
+    }
+
+    .btn-primary{
+      background:var(--navy);
+      color:#fff;
+      padding:14px 24px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:700;
+      transition:0.3s;
+    }
+
+    .btn-primary:hover{
+      background:var(--gold);
+    }
+
+    /* ---------------- HERO ---------------- */
+
+    .hero{
+      padding:90px 0;
+      background:linear-gradient(to right,#fff 50%, #f9f9f9 100%);
+    }
+
+    .hero-wrapper{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      align-items:center;
+    }
+
+    .tagline{
+      color:var(--navy);
+      font-weight:700;
+      letter-spacing:1px;
+      margin-bottom:18px;
+    }
+
+    .hero h1{
+      font-family:'Oswald', sans-serif;
+      font-size:5rem;
+      line-height:1;
+      color:var(--navy);
+      margin-bottom:25px;
+      text-transform:uppercase;
+    }
+
+    .hero h1 span{
+      color:var(--gold);
+    }
+
+    .hero-sub{
+      background:var(--navy);
+      color:#fff;
+      display:inline-block;
+      padding:16px 24px;
+      border-radius:12px;
+      font-weight:700;
+      margin-bottom:28px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.12);
+    }
+
+    .hero p{
+      font-size:1.08rem;
+      max-width:620px;
+      margin-bottom:35px;
+    }
+
+    .hero-buttons{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .btn-secondary{
+      border:2px solid var(--navy);
+      color:var(--navy);
+      padding:14px 24px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:700;
+      transition:0.3s;
+    }
+
+    .btn-secondary:hover{
+      background:var(--navy);
+      color:#fff;
+    }
+
+    .hero-image{
+      position:relative;
+    }
+
+    .hero-image img{
+      border-radius:30px;
+      box-shadow:0 25px 60px rgba(0,0,0,0.15);
+    }
+
+    .trust-box{
+      position:absolute;
+      bottom:-30px;
+      left:-40px;
+      background:#fff;
+      border:3px solid var(--navy);
+      border-radius:24px;
+      padding:30px;
+      width:420px;
+      box-shadow:0 15px 40px rgba(0,0,0,0.08);
+    }
+
+    .trust-box h3{
+      color:var(--navy);
+      font-size:2rem;
+      margin-bottom:12px;
+      font-family:'Oswald', sans-serif;
+    }
+
+    .trust-box h4{
+      color:var(--gold);
+      font-size:1.4rem;
+      margin-bottom:18px;
+    }
+
+    .trust-box ul{
+      list-style:none;
+    }
+
+    .trust-box li{
+      margin-bottom:12px;
+      font-weight:500;
+    }
+
+    /* ---------------- SERVICES ---------------- */
+
+    .services{
+      padding:130px 0 90px;
+      background:var(--navy);
+      color:#fff;
+    }
+
+    .section-title{
+      text-align:center;
+      font-family:'Oswald', sans-serif;
+      font-size:3rem;
+      margin-bottom:70px;
+      text-transform:uppercase;
+    }
+
+    .section-title span{
+      color:var(--gold);
+    }
+
+    .service-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:28px;
+    }
+
+    .service-card{
+      background:rgba(255,255,255,0.06);
+      padding:35px 25px;
+      border-radius:22px;
+      transition:0.35s;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .service-card:hover{
+      transform:translateY(-8px);
+      background:rgba(255,255,255,0.12);
+    }
+
+    .service-card h3{
+      margin-bottom:16px;
+      font-size:1.3rem;
+    }
+
+    .service-card p{
+      opacity:0.92;
+      font-size:0.96rem;
+    }
+
+    /* ---------------- WHY US ---------------- */
+
+    .why{
+      padding:100px 0;
+      background:#fff;
+    }
+
+    .why-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:30px;
+      margin-top:50px;
+    }
+
+    .why-card{
+      text-align:center;
+      padding:40px 25px;
+      border:1px solid #ececec;
+      border-radius:24px;
+      transition:0.3s;
+    }
+
+    .why-card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 15px 40px rgba(0,0,0,0.08);
+    }
+
+    .why-card h3{
+      color:var(--navy);
+      margin-bottom:15px;
+      font-size:1.3rem;
+    }
+
+    /* ---------------- CTA ---------------- */
+
+    .cta{
+      padding:90px 0;
+      background:linear-gradient(135deg,var(--navy),#001d54);
+      color:#fff;
+    }
+
+    .cta-wrapper{
+      display:grid;
+      grid-template-columns:2fr 1fr;
+      gap:50px;
+      align-items:center;
+    }
+
+    .cta h2{
+      font-family:'Oswald', sans-serif;
+      font-size:4rem;
+      line-height:1;
+      margin-bottom:25px;
+      text-transform:uppercase;
+    }
+
+    .cta h2 span{
+      color:var(--gold);
+    }
+
+    .contact-info{
+      margin-top:30px;
+    }
+
+    .contact-info p{
+      margin-bottom:12px;
+      font-size:1.05rem;
+    }
+
+    .qr-box{
+      background:#fff;
+      padding:25px;
+      border-radius:24px;
+      text-align:center;
+      color:var(--navy);
+    }
+
+    .qr-box img{
+      margin:auto;
+      max-width:220px;
+      margin-bottom:18px;
+    }
+
+    .qr-box h4{
+      font-size:1.2rem;
+      line-height:1.4;
+    }
+
+    .main-logo{
+      width:260px;
+      height:auto;
+      object-fit:contain;
+    }
+
+    .logo-wrapper{
+      display:flex;
+      align-items:center;
+    }
+
+    .students-image{
+      width:100%;
+      border-radius:30px;
+      box-shadow:0 25px 60px rgba(0,0,0,0.15);
+      object-fit:cover;
+    }
+
+    /* ---------------- FOOTER ---------------- */
+
+    footer{
+      background:#041942;
+      color:#fff;
+      text-align:center;
+      padding:28px 20px;
+      font-size:0.95rem;
+    }
+
+    /* ---------------- RESPONSIVE ---------------- */
+
+    @media(max-width:992px){
+
+      .hero-wrapper,
+      .cta-wrapper{
+        grid-template-columns:1fr;
+      }
+
+      .hero h1{
+        font-size:4rem;
+      }
+
+      .trust-box{
+        position:relative;
+        width:100%;
+        left:0;
+        bottom:0;
+        margin-top:25px;
+      }
+
+    }
+
+    @media(max-width:768px){
+
+      .nav-links{
+        display:none;
+      }
+
+      .hero{
+        padding:60px 0;
+      }
+
+      .hero h1{
+        font-size:3rem;
+      }
+
+      .section-title{
+        font-size:2.3rem;
+      }
+
+      .cta h2{
+        font-size:2.8rem;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav class="navbar">
+    <div class="container nav-wrapper">
+
+      <div class="logo-wrapper">
+        <img 
+          src="uniprep_hub_canada_logo_high_quality.png" 
+          alt="UniPrep Hub Canada Logo"
+          class="main-logo"
+        />
+     </div>
+
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Why Us</a>
+        <a href="#">Contact</a>
+        <a href="#" class="btn-primary">Book Consultation</a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="container hero-wrapper">
+
+      <div>
+
+        <div class="tagline">
+          PLAN TODAY. PREPARE SMART. SUCCEED TOMORROW.
+        </div>
+
+        <h1>
+          Guidance From <br>
+          <span>Grade 7 To University</span>
+        </h1>
+
+        <div class="hero-sub">
+          We Plan. We Guide. They Succeed.
+        </div>
+
+        <p>
+          At <strong>UniPrep Hub Canada</strong>, we help students and families make confident decisions, access the right resources, and stay on track for long-term academic and personal success.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#" class="btn-primary">Book Free Consultation</a>
+          <a href="#" class="btn-secondary">Explore Services</a>
+        </div>
+
+      </div>
+
+      <div class="hero-image">
+
+        <img 
+          src="uniprep_students_high_quality.png" 
+          alt="Students"
+          class="students-image"
+        />
+
+        <div class="trust-box">
+
+          <h3>PARENTS, REST ASSURED.</h3>
+
+          <h4>We’ve got your child’s future covered.</h4>
+
+          <ul>
+            <li>✔ We follow their progress</li>
+            <li>✔ We track their growth</li>
+            <li>✔ We keep you informed</li>
+            <li>✔ We’re with you every step of the way</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SERVICES -->
+
+  <section class="services">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Our Support, <span>Every Step Of The Way</span>
+      </h2>
+
+      <div class="service-grid">
+
+        <div class="service-card">
+          <h3>Academic Planning</h3>
+          <p>Personalized plans from Grade 7 onwards to help students stay ahead.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>Goal Setting & Study Skills</h3>
+          <p>Build strong habits and learning systems for long-term success.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>Course & Program Selection</h3>
+          <p>Choose the right academic path for high school and beyond.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>University Guidance</h3>
+          <p>Admissions, essays, scholarships, interviews, and application support.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>OSAP & Financial Aid</h3>
+          <p>Step-by-step support with OSAP and funding opportunities.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>Parent Partnership</h3>
+          <p>Regular updates, guidance meetings, and collaborative support.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- WHY US -->
+
+  <section class="why">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Why Families Choose <span>UniPrep Hub Canada</span>
+      </h2>
+
+      <div class="why-grid">
+
+        <div class="why-card">
+          <h3>Start Early. Stay Ahead.</h3>
+          <p>Early planning opens more opportunities and stronger outcomes.</p>
+        </div>
+
+        <div class="why-card">
+          <h3>Personalized Roadmaps</h3>
+          <p>Every student receives tailored academic guidance.</p>
+        </div>
+
+        <div class="why-card">
+          <h3>Experienced Guidance</h3>
+          <p>Trusted advisors who understand the educational journey.</p>
+        </div>
+
+        <div class="why-card">
+          <h3>Track Progress. See Growth.</h3>
+          <p>We measure what matters and support continuous improvement.</p>
+        </div>
+
+        <div class="why-card">
+          <h3>Reduce Stress. Build Confidence.</h3>
+          <p>We support students and families together at every stage.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+
+  <section class="cta">
+
+    <div class="container cta-wrapper">
+
+      <div>
+
+        <h2>
+          Book Your <span>Free Consultation Today!</span>
+        </h2>
+
+        <p>
+          Let’s build the right plan for your child’s future.
+        </p>
+
+        <div class="contact-info">
+          <p>📞 647-740-2617</p>
+          <p>✉️ uniprephubcanada@gmail.com</p>
+          <p>🌐 www.chemrock.ca/uniprephubcanada</p>
+        </div>
+
+      </div>
+
+      <div class="qr-box">
+
+        <img src="YOUR_QR_IMAGE.png" alt="QR Code">
+
+        <h4>
+          Scan To Book <br>
+          Your Free Consultation
+        </h4>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    Guiding Students. Supporting Families. Shaping Futures.
+  </footer>
+
+</body>
+</html>
