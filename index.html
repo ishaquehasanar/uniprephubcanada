@@ -370,6 +370,38 @@
       object-fit:cover;
     }
 
+    .contact-info{
+  margin-top:30px;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.contact-item{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  font-size:1.05rem;
+  font-weight:500;
+}
+
+.contact-item a{
+  color:white;
+  text-decoration:none;
+  transition:0.3s ease;
+}
+
+.contact-item a:hover{
+  color:var(--gold);
+}
+
+.contact-icon{
+  font-size:1.2rem;
+  width:24px;
+  display:flex;
+  justify-content:center;
+}
+
     /* ---------------- FOOTER ---------------- */
 
     footer{
@@ -625,9 +657,24 @@
         </p>
 
         <div class="contact-info">
-          <p>📞 647-740-2617</p>
-          <a href="mailto:uniprephubcanada@gmail.com" style="color: white;">✉️ uniprephubcanada@gmail.com</a>
-          <p>🌐 www.chemrock.ca/uniprephubcanada</p>
+          <div class="contact-item">
+            <span class="contact-icon">📞</span>
+            <a href="tel:6477402617">647-740-2617</a>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-icon">✉️</span>
+            <a href="mailto:uniprephubcanada@gmail.com">
+              uniprephubcanada@gmail.com
+            </a>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-icon">🌐</span>
+            <a href="https://www.chemrock.ca/uniprephubcanada" target="_blank">
+              www.chemrock.ca/uniprephubcanada
+            </a>
+          </div>
         </div>
 
       </div>
